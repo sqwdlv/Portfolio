@@ -1,8 +1,8 @@
 @import url("normalize.css");
 @import url("animation.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 body {
-  background: #092e19;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -17,10 +17,9 @@ header {
   width: 100vw;
   height: 10vh;
   top: 0;
-  background-color: #092e19;
   background-color: rgba(0, 0, 0, 0.55);
   border-bottom: 2px solid white;
-  z-index: 2;
+  z-index: 10;
 }
 
 header div.logo-name {
@@ -58,21 +57,20 @@ header nav ul li {
 }
 main {
   width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100vw;
   height: 100vh;
-}
-
-main div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-main div section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid rgba(141, 135, 135, 0.55);
 }
 
 main section#home-page {
@@ -80,6 +78,21 @@ main section#home-page {
   height: 100vh;
   line-height: 0.9;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+main section#home-page .dagnis-img-place {
+  position: absolute;
+  width: 20vw;
+  height: 50vh;
+  bottom: 0;
+  right: 0;
+}
+main section#home-page .dagnis-img-place .img-dagnis {
+  background: url("img/personal/footer-img.png");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
 main section#home-page h1 {
@@ -104,6 +117,7 @@ main section#home-page b:hover {
 main section#about-page {
   height: 100vh;
   width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 main section#about-page div#about-card {
@@ -112,7 +126,7 @@ main section#about-page div#about-card {
   width: 60%;
   height: 50%;
   border-radius: 35px;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 1;
 }
 
@@ -125,9 +139,7 @@ main section#about-page div#about-img-placeholder {
   background: url("img/personal/smuka_bilde.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
-  overflow-y: hidden;
-
-  z-index: 1;
+  z-index: 3;
 }
 
 main section#about-page #about-article {
@@ -137,18 +149,18 @@ main section#about-page #about-article {
   font-size: 1rem;
   border-top-right-radius: 35px;
   border-bottom-right-radius: 35px;
-  line-height: 135%;
 }
 
 main section#about-page #about-article .about-heading {
   display: flex;
   justify-content: left;
   margin-top: 5%;
+  margin-left: 5%;
   letter-spacing: 3;
   font-weight: 700;
   font-family: "Poppins", sans-serif;
   color: white;
-  font-size: 3e;
+  font-size: 3rem;
 }
 
 main section#about-page #about-article p {
@@ -156,43 +168,276 @@ main section#about-page #about-article p {
   margin: 5%;
   font-family: "Poppins", sans-serif;
   color: white;
+  overflow-y: scroll;
+  height: 300px;
+  font-size: 20px;
 }
 
 main section#experience-page {
   height: 100vh;
   width: 100vw;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 3;
 }
 
 main section#experience-page div.three-part-layout {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
+  width: 90vw;
+  height: 60vh;
+}
+
+main section#experience-page div.three-part-layout div.edu-cation,
+div.work-exp,
+div.languages {
+  position: relative;
+  width: 30vw;
+  height: 60vh;
+}
+
+main section#experience-page div.three-part-layout div.edu-cation h1,
+div.work-exp h1,
+div.languages h1 {
+  position: absolute;
+  top: 10px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+main section#experience-page div.three-part-layout div.edu-cation ul,
+div.work-exp ul,
+div.languages ul {
+  position: absolute;
+  top: 10%;
+  height: 35vh;
+  width: 25vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+main section#experience-page div.three-part-layout div.edu-cation li,
+div.work-exp li,
+div.languages li {
+  padding: 5%;
+  list-style-type: none;
+  color: white;
+  font-size: 22px;
   text-align: center;
 }
 
-main section#experience-page div.three-part-layout .edu-cation,
-.work-exp,
-.languages {
-  height: 60vh;
-  width: 30vw;
-  background-color: white;
-  border: 2px solid red;
-  z-index: 1;
+.button-to-top a {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #020405;
+  padding: 7px 12px;
+  font-size: 26px;
+  border-radius: 60px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  z-index: 5;
 }
 
-main section#experience-page div.three-part-layout .edu-cation,
-.work-exp,
-.languages h1 {
-  position: relative;
+main section#gallery-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+main section#gallery-page .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 60vh;
+  width: 80vw;
+  z-index: 3;
+}
+
+main section#gallery-page .grid-item-1,
+.grid-item-2,
+.grid-item-3 {
+  height: 60vh;
+  z-index: 3;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main section#gallery-page .grid-item-1 h2,
+.grid-item-2 h2,
+.grid-item-3 h2,
+.grid-item-4 h2 {
+  color: white;
+  border: 1px solid red;
+  z-index: 3;
+}
+
+main section#gallery-page .grid-item-1 {
+  background-image: url(img/personal/anyscan.jpeg);
+  filter: blur(20px);
+}
+
+main section#gallery-page .grid-item-2 {
+  background-image: url(img/personal/czt-phan.jpeg);
+  filter: blur(20px);
+}
+
+main section#gallery-page .grid-item-3 {
+  background-image: url(img/personal/smuka_bilde.jpeg);
+  filter: blur(20px);
+}
+
+main section#gallery-page .grid-item-1:hover {
+  background-image: url(img/personal/anyscan.jpeg);
+  filter: none;
+  transition: filter 1s;
+}
+
+main section#gallery-page .grid-item-2:hover {
+  background-image: url(img/personal/czt-phan.jpeg);
+  filter: none;
+  transition: filter 1s;
+}
+
+main section#gallery-page .grid-item-3:hover {
+  background-image: url(img/personal/smuka_bilde.jpeg);
+  filter: none;
+  transition: filter 1s;
+}
+
+main section#gallery-page div#img-title-placeholder {
   display: flex;
   flex-direction: row;
-  width: 60%;
-  height: 50%;
-  border: 2px solid white;
-  border-radius: 35px;
-  background-color: rgba(0, 0, 0, 0.25);
-  z-index: 1;
+  justify-content: space-between;
+  margin-top: 35px;
+  border: 1px solid green;
+  width: 80vw;
+  z-index: 5;
 }
 
-main section#experience-page div.three-part-layout .edu-cation {
+main section#gallery-page div#img-title-placeholder .img-titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 3px solid red;
+  width: 80vw;
+}
+
+main section#contacts-page {
   position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 5;
+}
+
+main section#contacts-page .contacts-card {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  height: 60vh;
+  width: 60vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  border-radius: 45px;
+}
+
+main section#contacts-page .contacts-card ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  text-align: left;
+  border-bottom-left-radius: 45px;
+  height: 50vh;
+  width: 30vw;
+  font-size: 2rem;
+  margin-left: 20%;
+  line-height: 80px;
+}
+
+main section#contacts-page .contacts-card a {
+  text-decoration: none;
+  color: white;
+}
+
+main section#contacts-page .contacts-card a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+main section#contacts-page div.contacts-title h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 10vh;
+  width: 30vw;
+  border-top-left-radius: 45px;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
+
+main section#contacts-page #location-place #map {
+  height: 60vh;
+  width: 30vw;
+  border-left: 3px solid #ffffff;
+  border-top-right-radius: 45px;
+  border-bottom-right-radius: 45px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  z-index: 6;
+}
+
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+footer .footer-menu ul {
+  display: flex;
+  z-index: 5;
+  list-style: none;
+}
+
+footer .footer-menu li {
+  margin-right: 20px;
+  z-index: 5;
+}
+
+footer .footer-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  z-index: 5;
+}
+
+footer .footer-menu a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 18px;
+  z-index: 5;
+}
+footer .footer-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }

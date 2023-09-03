@@ -10,7 +10,6 @@ main div#animated-bg {
   height: 100vh;
   top: 0;
   left: 0;
-  background: #11190b;
   overflow: hidden;
   z-index: 0;
 }
