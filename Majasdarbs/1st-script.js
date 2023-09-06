@@ -1,5 +1,5 @@
 /* Mercedes-Benz G-Class Specifications 400d AMG Line (Diesel) 2.55 Cr*
-source = https://www.cardekho.com/mercedes-benz/g-class/specs  */
+src = https://www.cardekho.com/mercedes-benz/g-class/specs  */
 
 const carDatasheet = {
     car: [
@@ -97,8 +97,14 @@ const carDatasheet = {
     ],
 };
 
-console.log(carDatasheet.enginePower);
-console.log(
-    carDatasheet.engineAndTransmission[0].cylinders[0].fuelSystem[0]
-        .ecologicalFoot[0].emmisionCompliance[0].emissionComplianceDependOn[0]
-);
+console.log(carDatasheet.engineAndTransmission);
+
+console.log(carDatasheet.carPerformace);
+
+console.log(carDatasheet.carCapacity);
+
+console.log(carDatasheet.comfortConvenience[0].powerSteering);
+
+console.log(carDatasheet.comfortConvenience.powerWindows[1]);
+
+console.log(carDatasheet.engineAndTransmission[0].cylinders[0].fuelSystem[0].ecologicalFoot[0].emmisionCompliance[0].emissionComplianceDependOn[0]);
